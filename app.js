@@ -11,15 +11,18 @@ var bodyParser     = require('body-parser');
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 
+var app = express();
+
+// app.use(require('connect-livereload')({
+//   ignore:['.xlsx']
+// }));
+
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
   }, 100);
 });
-
-var app = express();
-app.use(connectLiveReload());
 
 app.engine('.hbs', exphbs.engine({
   extname: '.hbs',
@@ -33,6 +36,7 @@ app.set('view engine', '.hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 
 i18n.configure({
@@ -65,6 +69,7 @@ app.get('/en', function (req, res) {
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

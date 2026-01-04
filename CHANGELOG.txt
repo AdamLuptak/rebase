@@ -1,0 +1,30 @@
+REBASE SITE CHANGELOG
+=====================
+
+Date: 2026-01-04
+
+Added
+-----
+- New REBASE logo (SVG + PNG fallback) and favicon.
+- Integrated logo into header navigation.
+- Added a right-side hero panel for a premium, modern layout.
+
+Fixed
+-----
+- Removed dependency on mockup screenshots: site is fully real HTML/CSS/JS.
+
+Files
+-----
+- index.html
+- styles.css
+- script.js
+- assets/logo.svg
+- assets/logo.png
+- assets/favicon.png
+
+
+Updated
+-------
+- Contact section: added website link and a mailto contact form with validation.
+
+Date: 2026-01-04

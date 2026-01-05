@@ -37,7 +37,7 @@ a{color:inherit;text-decoration:none}
 }
 .header__inner{
   display:flex; align-items:center; justify-content:space-between;
-  height:64px;
+  height:80px;
 }
 .brand{display:flex; align-items:center}
 .brand__logo{height:60px; width:auto; display:block}
@@ -221,3 +221,135 @@ input, textarea{
 input:focus, textarea:focus{ border-color: rgba(124,92,255,.55); }
 .small{ font-size: 12.5px; }
 .error{ color: #ff9aa5; min-height: 16px; }
+
+
+/* =========================
+   CONTACT (INFO CARDS)
+   ========================= */
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact__item {
+  width: 100%;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 18px 20px;
+}
+
+.contact__label {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.contact__value {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+.contactFormWrap {
+  margin-top: 0;
+}
+
+.contactForm {
+  width: 100%;
+  max-width: none; /* IMPORTANT: fills container */
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 28px;
+  position: relative;
+}
+
+/* subtle premium glow */
+.contactForm::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(124,92,255,.25),
+    rgba(32,201,151,.15),
+    transparent 60%
+  );
+  z-index: -1;
+  filter: blur(24px);
+}
+
+
+/* =========================
+   FORM FIELDS
+   ========================= */
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 800;
+  font-size: 13px;
+  color: rgba(255,255,255,.86);
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(7,9,19,.35);
+  color: rgba(255,255,255,.92);
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,.45);
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(124,92,255,.55);
+}
+
+.small {
+  font-size: 12.5px;
+}
+
+.error {
+  color: #ff9aa5;
+  min-height: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm {
+    padding: 20px;
+  }
+}
